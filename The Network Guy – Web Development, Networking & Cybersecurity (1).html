@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Network Guy – Web Development, Networking & Cybersecurity</title>
+<meta name="description" content="The Network Guy by Ibrahim: secure web development and simple networking and cybersecurity education, based in Karachi, Pakistan.">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0B1220;--card:#121B2E;--ink:#E8EEF8;--mut:#9AA9C2;--acc:#3DDC97;--acc2:#0B1220;--line:#22304A;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#F4F7FB;--card:#fff;--ink:#0F1B2D;--mut:#4A5B75;--acc:#0A7C55;--acc2:#fff;--line:#D5DDEA}}
+:root[data-theme="light"]{--bg:#F4F7FB;--card:#fff;--ink:#0F1B2D;--mut:#4A5B75;--acc:#0A7C55;--acc2:#fff;--line:#D5DDEA}
+html{scroll-padding-top:calc(76px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,sans-serif;font-size:17px;line-height:1.65}
+h1,h2,h3{font-family:Sora,sans-serif;margin:0;line-height:1.15}
+a{color:inherit;text-decoration:none}
+.w{max-width:1100px;margin:0 auto;padding:0 20px}
+.mono{font-family:'JetBrains Mono',monospace}
+button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer;min-height:44px}
+.btn{background:var(--acc);color:var(--acc2);font-weight:600;border:0;border-radius:10px;padding:12px 22px;display:inline-flex;align-items:center;justify-content:center}
+.btn.o{background:none;color:var(--ink);border:1px solid var(--line)}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-family:Sora;font-weight:700;font-size:19px}
+.links{display:flex;gap:22px;align-items:center}.links a{color:var(--mut);font-size:15px}.links a:hover{color:var(--ink)}
+.ib{width:44px;border:1px solid var(--line);background:none;border-radius:10px}
+#mb{display:none}
+@media(max-width:760px){#mb{display:inline-block}.links{display:none;position:absolute;left:0;right:0;top:68px;background:var(--bg);flex-direction:column;padding:18px 20px;border-bottom:1px solid var(--line);align-items:flex-start}.links.on{display:flex}}
+.hero{display:flex;flex-wrap:wrap;gap:40px;align-items:center;padding:72px 0}.hero>div{flex:1 1 380px}
+.tag{color:var(--acc);font-size:13px;letter-spacing:1px}
+.hero h1{font-size:clamp(38px,6vw,68px);margin:14px 0 18px;letter-spacing:-1.5px}
+.hero p{color:var(--mut);max-width:520px;margin:0 0 26px}
+.term{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;font-size:14px;line-height:1.9}
+.term .d{color:var(--mut)}.term b{color:var(--acc);font-weight:500}
+section{padding:56px 0}
+h2{font-size:clamp(28px,4vw,40px);margin-bottom:10px;letter-spacing:-1px}
+.sub{color:var(--mut);margin:0 0 28px;max-width:620px}
+.g{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.c{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.c h3{font-size:19px;margin-bottom:8px}.c p{margin:0;color:var(--mut);font-size:15px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.chip{background:none;border:1px solid var(--line);border-radius:999px;padding:6px 16px;font-size:14px}
+.chip[aria-pressed=true]{background:var(--acc);color:var(--acc2);border-color:var(--acc)}
+.pc{text-align:left;width:100%;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:8px;min-height:190px}
+.pc:hover{border-color:var(--acc)}.pc .k{font-size:12px;color:var(--acc)}.pc h3{font-size:20px}.pc span.s{color:var(--mut);font-size:15px;flex:1}
+.st{display:flex;gap:6px;flex-wrap:wrap}.st i{font-style:normal;font-size:12px;border:1px solid var(--line);border-radius:6px;padding:2px 8px;color:var(--mut)}
+dialog{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:18px;max-width:560px;width:calc(100% - 32px);padding:28px}
+dialog::backdrop{background:#000a}
+.bar{height:12px;background:var(--line);border-radius:99px;overflow:hidden;margin:14px 0 20px}.bar div{height:100%;background:var(--acc);width:0;transition:width .8s}
+.tp{display:flex;flex-wrap:wrap;gap:8px}.tp span{border:1px solid var(--acc);border-radius:8px;padding:4px 12px;font-size:14px}.tp span.n{border-style:dashed;border-color:var(--mut);color:var(--mut)}
+.tl{border-left:2px solid var(--line);padding-left:20px;margin-left:6px}.tl div{margin-bottom:22px;position:relative}.tl div:before{content:"";position:absolute;left:-27px;top:8px;width:10px;height:10px;border-radius:50%;background:var(--acc)}
+form{display:grid;gap:12px}label{font-size:14px;color:var(--mut)}
+input,select,textarea{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:11px 12px;min-height:44px}textarea{min-height:110px}
+.er{color:#E5604D;font-size:14px;min-height:20px}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--mut);font-size:14px}
+</style></head><body>
+<header><div class="w nav">
+<a class="logo" href="#top"><svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="var(--acc)" stroke-width="2" aria-hidden="true"><path d="M16 3l11 4v8c0 7-5 12-11 14C10 27 5 22 5 15V7z"/><circle cx="16" cy="13" r="2"/><circle cx="11" cy="20" r="2"/><circle cx="21" cy="20" r="2"/><path d="M16 15l-4 4M16 15l4 4"/></svg>The Network Guy</a>
+<nav class="links" id="lk"><a href="#about">About</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#roadmap">Roadmap</a><a href="#contact">Contact</a></nav>
+<div style="display:flex;gap:8px"><button class="ib" id="th" aria-label="Toggle light or dark theme">◐</button><button class="ib" id="mb" aria-label="Open menu" aria-expanded="false">☰</button></div>
+</div></header>
+
+<main class="w" id="top">
+<div class="hero"><div>
+<div class="tag mono">KARACHI, PAKISTAN · NETWORKING &amp; SECURITY</div>
+<h1>Secure websites. Simple networking.</h1>
+<p>The Network Guy builds full-stack web projects and explains networking and cybersecurity in plain language for students and young professionals. Run by Ibrahim.</p>
+<a class="btn" href="#projects">View my projects</a> <a class="btn o" href="#contact">Hire me</a></div>
+<div><div class="term mono"><span class="d">$</span> whoami<br><b>Ibrahim — The Network Guy</b><br><span class="d">$</span> education<br><b>BS Computer Networking &amp; Security, SSUET</b><br><span class="d">$</span> stack<br><b>MERN · PHP/MySQL · ASP.NET</b><br><span class="d">$</span> focus<br><b>Networking · Cybersecurity · Web</b></div></div></div>
+
+<section id="about"><h2>About</h2>
+<p class="sub">I'm a Computer Networking and Security student at Sir Syed University of Engineering and Technology (SSUET), Karachi, with a background in full-stack web development. I've studied cryptography, cybersecurity fundamentals and data communications, and I use that security mindset in the websites I build.</p>
+<div class="g">
+<div class="c"><h3>Tech stack</h3><div class="st"><i>React</i><i>Node.js</i><i>MongoDB</i><i>PHP</i><i>MySQL</i><i>ASP.NET</i><i>Java</i><i>Python</i></div></div>
+<div class="c"><h3>Study areas</h3><p>Cryptography, cybersecurity fundamentals, data communications and networking.</p></div>
+<div class="c"><h3>Brand</h3><p>TheNetworkGuy: a tech education brand that simplifies networking and cybersecurity.</p></div></div>
+<h3 style="margin:36px 0 18px">Experience</h3>
+<div class="tl"><div><b>Web Development Intern</b><br><span style="color:var(--mut)">Qwaid Marketing Agency</span></div><div><b>SEO Intern</b><br><span style="color:var(--mut)">Digibones</span></div><div><b>Founder, TheNetworkGuy</b><br><span style="color:var(--mut)">Networking and cybersecurity education for students and young professionals</span></div></div>
+</section>
+
+<section id="services"><h2>Services</h2><p class="sub">What I can build or create for your business.</p>
+<div class="g">
+<div class="c"><h3>Website development</h3><p>Business sites, portfolios and full-stack web apps built with the MERN stack, PHP/MySQL or ASP.NET.</p></div>
+<div class="c"><h3>Security-minded delivery</h3><p>HTTPS, safe deployment and sensible hardening, so your site is built with security from day one.</p></div>
+<div class="c"><h3>Tech education content</h3><p>Clear guides, PDFs and social content that explain networking and cybersecurity simply.</p></div>
+</div></section>
+
+<section id="projects"><h2>Projects</h2><p class="sub">Select a project to see the details.</p>
+<div class="chips" id="fc"></div><div class="g" id="pg"></div></section>
+
+<section id="roadmap"><h2>Networking education roadmap</h2>
+<p class="sub">A 29-topic roadmap across six phases for TheNetworkGuy. Each completed topic comes with a branded PDF guide and an Instagram caption.</p>
+<div class="c"><div class="mono" style="display:flex;justify-content:space-between;font-size:14px"><span>Progress</span><span id="pt">6 / 29 topics</span></div>
+<div class="bar" role="progressbar" aria-valuenow="6" aria-valuemin="0" aria-valuemax="29"><div id="pb"></div></div>
+<div class="tp" id="tp"></div></div></section>
+
+<section id="contact"><h2>Contact</h2><p class="sub">Tell me about your project and I'll reply with a plan and a quote.</p>
+<div class="g" style="grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+<form id="fm" novalidate>
+<div><label for="n">Name</label><input id="n" autocomplete="name"></div>
+<div><label for="s">What do you need?</label><select id="s"><option>Business website</option><option>Web application</option><option>E-commerce store</option><option>Security review</option><option>Tech content / guides</option></select></div>
+<div><label for="m">Message</label><textarea id="m"></textarea></div>
+<div class="er" id="er" role="alert"></div>
+<a class="btn" id="wa" href="https://wa.me/923292606743" target="_blank" rel="noopener">Send on WhatsApp</a></form>
+<div class="c"><h3>Direct contact</h3><p style="margin-top:10px">Email: <a id="ea" style="color:var(--acc)"></a></p><p>WhatsApp: <a href="https://wa.me/923292606743" style="color:var(--acc)">+92 329 2606743</a></p><p>LinkedIn: <a href="https://www.linkedin.com/feed/foryou/" target="_blank" rel="noopener" style="color:var(--acc)">View on LinkedIn</a></p><p>Location: Karachi, Pakistan</p></div></div></section>
+</main>
+<footer><div class="w">© <span id="yr"></span> The Network Guy · Built by Ibrahim</div></footer>
+
+<dialog id="dg"><h3 id="dt" style="font-size:24px;margin-bottom:8px"></h3><div class="tag mono" id="dk"></div><p id="dd" style="color:var(--mut)"></p><div class="st" id="ds" style="margin-bottom:18px"></div><p class="mono" style="font-size:13px;color:var(--mut)">[Live demo / GitHub link]</p><button class="btn" id="dc">Close</button></dialog>
+
+<script>
+var WA="923292606743",EMAIL="thenetworkguyv3.0@gmail.com";
+var P=[
+{t:"NetVision",c:"Networking",s:"Network packet visualizer",d:"A network packet visualizer that helps people see how data moves across a network. Built as part of my university studies.",k:["React","Node.js","MongoDB"]},
+{t:"Parkify",c:"Web",s:"Smart parking app prototype",d:"A smart parking application prototype from an early stage of my development journey, built during my studies.",k:["Prototype","Web app"]},
+{t:"Online Exam System",c:"Desktop",s:"MCQ exam platform",d:"A desktop online exam system with multiple-choice question support and a database backend.",k:["Java Swing","MongoDB"]},
+{t:"TheNetworkGuy Roadmap",c:"Education",s:"29-topic networking curriculum",d:"A six-phase, 29-topic networking education roadmap. Each published topic includes a branded PDF guide and an Instagram caption.",k:["Content","PDF guides","Branding"]},
+{t:"Personal Portfolio Site",c:"Web",s:"Dark-themed single-page site",d:"A self-contained single-page HTML portfolio with a dark theme, deployed on Vercel.",k:["HTML","CSS","JavaScript","Vercel"]},
+{t:"CV Document Generator",c:"Tools",s:"Automated CV creation",d:"CV documents generated programmatically for myself and others, in PDF and Word formats.",k:["Python","ReportLab","docx"]},
+{t:"Smart City Traffic Management",c:"Database",s:"DBMS complex engineering problem",d:"A database design project on smart city traffic management, completed as a DBMS course assignment.",k:["DBMS","SQL"]}];
+var cats=["All"].concat(P.map(function(p){return p.c}).filter(function(v,i,a){return a.indexOf(v)===i})),cur="All";
+function fc(){document.getElementById("fc").innerHTML=cats.map(function(c){return '<button class="chip" aria-pressed="'+(c===cur)+'" data-c="'+c+'">'+c+'</button>'}).join("")}
+function pg(){document.getElementById("pg").innerHTML=P.map(function(p,i){return (cur==="All"||p.c===cur)?'<button class="pc" data-i="'+i+'"><span class="k mono">'+p.c.toUpperCase()+'</span><h3>'+p.t+'</h3><span class="s">'+p.s+'</span><span class="st">'+p.k.map(function(x){return "<i>"+x+"</i>"}).join("")+'</span></button>':""}).join("")}
+document.getElementById("fc").onclick=function(e){if(e.target.dataset.c){cur=e.target.dataset.c;fc();pg()}};
+var dg=document.getElementById("dg");
+document.getElementById("pg").onclick=function(e){var b=e.target.closest(".pc");if(!b)return;var p=P[b.dataset.i];
+document.getElementById("dt").textContent=p.t;document.getElementById("dk").textContent=p.c.toUpperCase();document.getElementById("dd").textContent=p.d;
+document.getElementById("ds").innerHTML=p.k.map(function(x){return "<i>"+x+"</i>"}).join("");dg.showModal()};
+document.getElementById("dc").onclick=function(){dg.close()};
+var T=["Networking","IP Address","MAC Address","Router vs Switch vs Hub","Bandwidth vs Speed","OSI Model"];
+document.getElementById("tp").innerHTML=T.map(function(x){return "<span>✓ "+x+"</span>"}).join("")+'<span class="n">Next: What is the TCP/IP Model?</span>';
+setTimeout(function(){document.getElementById("pb").style.width=(6/29*100)+"%"},300);
+document.getElementById("mb").onclick=function(){var o=document.getElementById("lk").classList.toggle("on");this.setAttribute("aria-expanded",o)};
+document.getElementById("lk").onclick=function(){this.classList.remove("on")};
+document.getElementById("th").onclick=function(){var r=document.documentElement,l=getComputedStyle(r).getPropertyValue("--bg").trim()==="#F4F7FB";r.setAttribute("data-theme",l?"dark":"light");try{localStorage.setItem("tng-theme",l?"dark":"light")}catch(e){}};
+try{var t=localStorage.getItem("tng-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}
+function msg(){var n=document.getElementById("n").value.trim(),m=document.getElementById("m").value.trim(),er=document.getElementById("er");
+if(!n||!m){er.textContent="Please enter your name and message.";return null}er.textContent="";return "Hi, I'm "+n+". I need: "+document.getElementById("s").value+"\n\n"+m}
+document.getElementById("wa").onclick=function(e){var x=msg();if(!x){e.preventDefault();return}this.href="https://wa.me/"+WA+"?text="+encodeURIComponent(x)};
+var ea=document.getElementById("ea");ea.textContent=EMAIL;ea.href="mailto:"+EMAIL;
+document.getElementById("yr").textContent=new Date().getFullYear();
+fc();pg();
+</script></body></html>
